@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Mono", sans-serif;
+  background-color: #f7f7f7;
+}
+
+.user-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  gap: 20px; /* Adjust the spacing between cards */
+  justify-content: center; /* Centers the cards */
+  align-items: flex-start; /* Aligns cards properly */
+}
+
+h1 {
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: all 0.3s;
+}
+
+h1:hover {
+  color: #c2b280;
+  transform: scale(1.05);
+}
+
+.card {
+  position: relative;
+  overflow: hidden; /* Prevents the avatar from overflowing */
+  height: 550px; /* Maintain fixed height */
+  height: 550px; /* Set a fixed height for consistency */
+  width: 450px;
+  margin: 40px;
+  border: 4px solid #222;
+}
+
+.avatar-container {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden; /* Prevents overflow */
+  transition: height 0.5s ease;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.avatar-container:hover {
+  height: 542px;
+}
+
+.data {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Adds a blur effect for better visibility */
+  padding: 24px;
+  transition: all 0.1s ease;
+}
+
+.avatar-container:hover + .data {
+  display: none;
+  background: rgba(166, 100, 100, 0.2); /* Slightly changes background */
+}
+
+.skill-list {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Ensures proper spacing */
+  justify-content: flex-start; /* Aligns skills properly */
+}
+
+.skill {
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 5px;
+  display: inline-flex; /* Keeps text and icon aligned */
+  align-items: center;
+  font-weight: 500;
+  flex: 0 1 auto; /* Ensures items shrink and grow properly */
+  min-width: fit-content; /* Prevents skills from stretching too much */
+  max-width: 100%; /* Avoids overflowing */
+  white-space: nowrap; /* Prevents text breaking inside the button */
+  margin: 4px; /* Adds spacing */
+  transition: transform 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+}
